@@ -9,6 +9,26 @@ rules:
 - apiGroups:
   - test.my.domain
   resources:
+  - test2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - test.my.domain
+  resources:
+  - test2s/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - test.my.domain
+  resources:
   - tests
   verbs:
   - create

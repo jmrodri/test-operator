@@ -1,0 +1,24 @@
+# permissions for end users to edit test2s.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: test2-editor-role
+rules:
+- apiGroups:
+  - test.my.domain
+  resources:
+  - test2s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - test.my.domain
+  resources:
+  - test2s/status
+  verbs:
+  - get

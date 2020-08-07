@@ -6,6 +6,9 @@ resources:
 - group: test
   kind: Test
   version: v1
+- group: test
+  kind: Test2
+  version: v1
 version: 3-alpha
 plugins:
   go.sdk.operatorframework.io/v2-alpha: {}

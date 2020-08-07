@@ -1,0 +1,20 @@
+# permissions for end users to view test2s.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: test2-viewer-role
+rules:
+- apiGroups:
+  - test.my.domain
+  resources:
+  - test2s
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - test.my.domain
+  resources:
+  - test2s/status
+  verbs:
+  - get

@@ -13,6 +13,16 @@ metadata:
           "spec": {
             "foo": "bar"
           }
+        },
+        {
+          "apiVersion": "test.my.domain/v1",
+          "kind": "Test2",
+          "metadata": {
+            "name": "test2-sample"
+          },
+          "spec": {
+            "foo": "bar"
+          }
         }
       ]
     capabilities: Basic Install
@@ -24,6 +34,11 @@ spec:
   apiservicedefinitions: {}
   customresourcedefinitions:
     owned:
+    - description: Test2 is the Schema for the test2s API
+      displayName: Test2
+      kind: Test2
+      name: test2s.test.my.domain
+      version: v1
     - description: Test is the Schema for the tests API
       displayName: Test
       kind: Test
@@ -38,6 +53,26 @@ spec:
     spec:
       clusterPermissions:
       - rules:
+        - apiGroups:
+          - test.my.domain
+          resources:
+          - test2s
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - test.my.domain
+          resources:
+          - test2s/status
+          verbs:
+          - get
+          - patch
+          - update
         - apiGroups:
           - test.my.domain
           resources:

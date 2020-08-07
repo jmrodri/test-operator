@@ -17,6 +17,11 @@ spec:
       kind: Test
       name: tests.test.my.domain
       version: v1
+    - description: Test2 is the Schema for the test2s API
+      displayName: Test2
+      kind: Test2
+      name: test2s.test.my.domain
+      version: v1
   description: test operator with packagemanifests
   displayName: test-operator
   icon:
